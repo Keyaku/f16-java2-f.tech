@@ -2,8 +2,8 @@ package com.f16.ftech.jdbc;
 
 import java.io.*;
 import java.sql.*;
-import oracle.sql.BLOB;
-import oracle.sql.CLOB;
+import java.sql.Blob;
+import java.sql.Clob;
 
 /**
  * Base class for Oracle 9i DAO classes.
@@ -19,7 +19,7 @@ public class AbstractDAO
 		}
 
 		Reader reader = new StringReader( data );
-		 Writer clobWriter = ((oracle.sql.CLOB)clob).getCharacterOutputStream();
+		Writer clobWriter = clob.setCharacterStream(0);
 		char[] cbuffer = new char[10* 1024];
 		int nread = 0;
 		while( (nread= reader.read(cbuffer)) != -1 )
@@ -34,7 +34,7 @@ public class AbstractDAO
 			return;
 		}
 
-		OutputStream os = ((oracle.sql.BLOB)blob).getBinaryOutputStream();
+		OutputStream os = blob.setBinaryStream(0);
 		InputStream is = new ByteArrayInputStream(data);
 		byte[] buffer = new byte[10* 1024];
 		int nread = 0;

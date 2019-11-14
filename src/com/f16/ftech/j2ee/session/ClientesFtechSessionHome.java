@@ -9,8 +9,6 @@
 package com.f16.ftech.j2ee.session;
 
 import java.rmi.RemoteException;
-import java.util.Collection;
-import java.util.Date;
 import javax.ejb.CreateException;
 import javax.ejb.EJBHome;
 import com.f16.ftech.j2ee.session.ClientesFtechSession;

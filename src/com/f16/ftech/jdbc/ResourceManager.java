@@ -19,8 +19,8 @@ public class ResourceManager
         {
             try
             {
-                Class jdbcDriverClass = Class.forName( JDBC_DRIVER );
-                driver = (Driver) jdbcDriverClass.newInstance();
+                Class<?> jdbcDriverClass = Class.forName( JDBC_DRIVER );
+                driver = (Driver) jdbcDriverClass.getDeclaredConstructor().newInstance();
                 DriverManager.registerDriver( driver );
             }
             catch (Exception e)

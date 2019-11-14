@@ -1,10 +1,6 @@
 package com.f16.ftech.struts.forms;
 
-import java.math.*;
-import java.text.*;
 import org.apache.struts.action.*;
-import javax.servlet.http.HttpServletRequest;
-import com.f16.ftech.dto.*;
 
 public class ClientesFtechFindWhereDataNascimentoEqualsForm extends ActionForm
 {

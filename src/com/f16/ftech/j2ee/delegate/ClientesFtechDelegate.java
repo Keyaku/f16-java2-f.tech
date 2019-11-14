@@ -12,10 +12,7 @@ import com.f16.ftech.dao.*;
 import com.f16.ftech.dto.*;
 import com.f16.ftech.exceptions.*;
 import com.f16.ftech.j2ee.session.*;
-import java.rmi.RemoteException;
-import java.math.*;
 import java.util.Date;
-import javax.ejb.*;
 
 public class ClientesFtechDelegate implements ClientesFtechDao
 {

@@ -1,13 +1,8 @@
 package com.f16.ftech.struts.actions;
 
-import org.apache.struts.*;
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.*;
-import com.f16.ftech.dao.*;
-import com.f16.ftech.dto.*;
-import com.f16.ftech.factory.*;
 import com.f16.ftech.struts.forms.*;
 
 public class ClientesFtechDeleteAction extends Action

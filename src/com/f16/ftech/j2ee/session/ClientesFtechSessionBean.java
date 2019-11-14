@@ -12,8 +12,6 @@ import com.f16.ftech.factory.*;
 import com.f16.ftech.dao.*;
 import com.f16.ftech.dto.*;
 import com.f16.ftech.exceptions.*;
-import java.rmi.RemoteException;
-import java.math.*;
 import java.util.Date;
 import javax.ejb.*;
 

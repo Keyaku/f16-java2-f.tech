@@ -9,19 +9,14 @@
 package com.f16.ftech.jdbc;
 
 import com.f16.ftech.dao.*;
-import com.f16.ftech.factory.*;
 import java.util.Date;
 import com.f16.ftech.dto.*;
 import com.f16.ftech.exceptions.*;
 import java.sql.Connection;
 import java.util.Collection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
-import java.util.List;
-import java.util.Iterator;
 import java.util.ArrayList;
 
 public class ClientesFtechDaoImpl extends AbstractDAO implements ClientesFtechDao
@@ -114,7 +109,6 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 		final boolean isConnSupplied = (userConn != null);
 		Connection conn = null;
 		PreparedStatement stmt = null;
-		ResultSet rs = null;
 		
 		try {
 			// get the user-specified connection or get a connection from the ResourceManager
@@ -244,7 +238,7 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 	 */
 	public ClientesFtech findByPrimaryKey(int idCliente) throws ClientesFtechDaoException
 	{
-		ClientesFtech ret[] = findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ?", new Object[] {  new Integer(idCliente) } );
+		ClientesFtech ret[] = findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ?", new Object[] { Integer.valueOf(idCliente) } );
 		return ret.length==0 ? null : ret[0];
 	}
 
@@ -261,7 +255,7 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 	 */
 	public ClientesFtech[] findWhereIdClienteEquals(int idCliente) throws ClientesFtechDaoException
 	{
-		return findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ? ORDER BY ID_CLIENTE", new Object[] {  new Integer(idCliente) } );
+		return findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ? ORDER BY ID_CLIENTE", new Object[] { Integer.valueOf(idCliente) } );
 	}
 
 	/** 
@@ -269,7 +263,7 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 	 */
 	public ClientesFtech[] findWhereNumeroCcEquals(int numeroCc) throws ClientesFtechDaoException
 	{
-		return findByDynamicSelect( SQL_SELECT + " WHERE NUMERO_CC = ? ORDER BY NUMERO_CC", new Object[] {  new Integer(numeroCc) } );
+		return findByDynamicSelect( SQL_SELECT + " WHERE NUMERO_CC = ? ORDER BY NUMERO_CC", new Object[] { Integer.valueOf(numeroCc) } );
 	}
 
 	/** 
@@ -376,7 +370,7 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 	 */
 	protected ClientesFtech[] fetchMultiResults(ResultSet rs) throws SQLException
 	{
-		Collection resultList = new ArrayList();
+		Collection<ClientesFtech> resultList = new ArrayList<ClientesFtech>();
 		while (rs.next()) {
 			ClientesFtech dto = new ClientesFtech();
 			populateDto( dto, rs);

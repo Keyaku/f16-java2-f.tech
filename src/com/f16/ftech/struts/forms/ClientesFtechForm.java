@@ -1,10 +1,8 @@
 package com.f16.ftech.struts.forms;
 
-import java.math.*;
 import java.text.*;
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
-import com.f16.ftech.dto.*;
 
 public class ClientesFtechForm extends ActionForm
 {
@@ -175,7 +173,7 @@ public class ClientesFtechForm extends ActionForm
 		ActionErrors _errors = new ActionErrors();
 		// attempt to parse idCliente
 		try {
-			int _parsed_idCliente = Integer.parseInt( idCliente );
+			Integer.parseInt( idCliente );
 		}
 		catch (Exception e) {
 			_errors.add( ActionErrors.GLOBAL_ERROR, new ActionError("internal.error", e.getMessage()) );
@@ -183,7 +181,7 @@ public class ClientesFtechForm extends ActionForm
 		
 		// attempt to parse numeroCc
 		try {
-			int _parsed_numeroCc = Integer.parseInt( numeroCc );
+			Integer.parseInt( numeroCc );
 		}
 		catch (Exception e) {
 			_errors.add( ActionErrors.GLOBAL_ERROR, new ActionError("internal.error", e.getMessage()) );
@@ -191,7 +189,7 @@ public class ClientesFtechForm extends ActionForm
 		
 		// attempt to parse dataNascimento
 		try {
-			java.util.Date _parsed_dataNascimento = (dataNascimento == null || dataNascimento.trim().length()==0) ? null : DateFormat.getDateTimeInstance().parse( dataNascimento);
+			if (dataNascimento == null || dataNascimento.trim().length()==0) DateFormat.getDateTimeInstance().parse( dataNascimento);
 		}
 		catch (Exception e) {
 			_errors.add( ActionErrors.GLOBAL_ERROR, new ActionError("internal.error", e.getMessage()) );
@@ -199,7 +197,7 @@ public class ClientesFtechForm extends ActionForm
 		
 		// attempt to parse dataInsercao
 		try {
-			java.util.Date _parsed_dataInsercao = (dataInsercao == null || dataInsercao.trim().length()==0) ? null : DateFormat.getDateTimeInstance().parse( dataInsercao);
+			if (dataInsercao == null || dataInsercao.trim().length()==0) DateFormat.getDateTimeInstance().parse( dataInsercao);
 		}
 		catch (Exception e) {
 			_errors.add( ActionErrors.GLOBAL_ERROR, new ActionError("internal.error", e.getMessage()) );

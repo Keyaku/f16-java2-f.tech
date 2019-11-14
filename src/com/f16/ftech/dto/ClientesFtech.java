@@ -8,11 +8,7 @@
 
 package com.f16.ftech.dto;
 
-import com.f16.ftech.dao.*;
-import com.f16.ftech.factory.*;
-import com.f16.ftech.exceptions.*;
 import java.io.Serializable;
-import java.util.*;
 import java.util.Date;
 
 public class ClientesFtech implements Serializable

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+<tiles-definitions>
+  <!-- sample tiles definitions
+    <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
+        <put name="title"  value="Sample Page Title" />
+        <put name="header" value="/common/header.jsp" />
+        <put name="menu"   value=".mainMenu" />
+        <put name="footer" value="/common/footer.jsp" />
+        <put name="body"   value=".portal.body" />
+    </definition>
+
+    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+    end samples -->
+  <definition name="${YOUR_DEFINITION_HERE}" />
+  <definition name=".mainLayout" path="/layouts/mainLayout.jsp">
+    <put name="nav" value="/pages/Nav.jsp" />
+  </definition>
+  <definition name=".index" extends=".mainLayout">
+    <put name="title" value="Index" />
+    <put name="body" value="/pages/Welcome.jsp" />
+  </definition>
+  <definition name=".clientesFtech.index" extends=".mainLayout">
+    <put name="title" value="ClientesFtech" />
+    <put name="body" value="/ClientesFtech.jsp" />
+  </definition>
+  <definition name=".clientesFtech.view" extends=".mainLayout">
+    <put name="title" value="ClientesFtech" />
+    <put name="body" value="/ClientesFtechView.jsp" />
+  </definition>
+  <definition name=".clientesFtech.edit" extends=".mainLayout">
+    <put name="title" value="ClientesFtech" />
+    <put name="body" value="/ClientesFtechEdit.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findByPrimaryKey.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findByPrimaryKey" />
+    <put name="body" value="/ClientesFtechFindByPrimaryKey.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findByPrimaryKey.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findByPrimaryKey" />
+    <put name="body" value="/ClientesFtechView.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findAll.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findAll" />
+    <put name="body" value="/ClientesFtechFindAll.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findAll.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findAll" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereIdClienteEquals.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereIdClienteEquals" />
+    <put name="body" value="/ClientesFtechFindWhereIdClienteEquals.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereIdClienteEquals.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereIdClienteEquals" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereNumeroCcEquals.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereNumeroCcEquals" />
+    <put name="body" value="/ClientesFtechFindWhereNumeroCcEquals.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereNumeroCcEquals.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereNumeroCcEquals" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereNomeEquals.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereNomeEquals" />
+    <put name="body" value="/ClientesFtechFindWhereNomeEquals.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereNomeEquals.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereNomeEquals" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereMoradaEquals.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereMoradaEquals" />
+    <put name="body" value="/ClientesFtechFindWhereMoradaEquals.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereMoradaEquals.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereMoradaEquals" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereDataNascimentoEquals.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereDataNascimentoEquals" />
+    <put name="body" value="/ClientesFtechFindWhereDataNascimentoEquals.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereDataNascimentoEquals.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereDataNascimentoEquals" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereDataInsercaoEquals.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereDataInsercaoEquals" />
+    <put name="body" value="/ClientesFtechFindWhereDataInsercaoEquals.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereDataInsercaoEquals.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereDataInsercaoEquals" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereGeneroEquals.form" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereGeneroEquals" />
+    <put name="body" value="/ClientesFtechFindWhereGeneroEquals.jsp" />
+  </definition>
+  <definition name=".clientesFtech.findWhereGeneroEquals.results" extends=".mainLayout">
+    <put name="title" value="ClientesFtech findWhereGeneroEquals" />
+    <put name="body" value="/ClientesFtechResult.jsp" />
+  </definition>
+</tiles-definitions>
+

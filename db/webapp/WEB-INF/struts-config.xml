@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<!--
+
+     This is a blank Struts configuration file with an example
+
+     welcome action/page and other commented sample elements.
+
+
+
+     Tiles and the Struts Validator are configured using the factory defaults
+
+     and are ready-to-use.
+
+
+
+     NOTE: If you have a generator tool to create the corresponding Java classes
+
+     for you, you could include the details in the "form-bean" declarations.
+
+     Otherwise, you would only define the "form-bean" element itself, with the
+
+     corresponding "name" and "type" attributes, as shown here.
+
+-->
+<struts-config>
+  <!-- ==================================== Data Source Configuration -->
+  <!--
+
+ <data-sources>
+
+   <data-source>
+
+     <set-property
+
+        property="autoCommit"
+
+        value="false"/>
+
+     <set-property
+
+        property="description"
+
+        value="Example Data Source Configuration"/>
+
+     <set-property
+
+        property="driverClass"
+
+        value="org.postgresql.Driver"/>
+
+     <set-property
+
+        property="maxCount"
+
+        value="4"/>
+
+     <set-property
+
+        property="minCount"
+
+        value="2"/>
+
+     <set-property
+
+        property="password"
+
+        value="mypassword"/>
+
+     <set-property
+
+        property="url"
+
+        value="jdbc:postgresql://localhost/mydatabase"/>
+
+     <set-property
+
+        property="user"
+
+        value="myusername"/>
+
+   </data-source>
+
+ </data-sources>
+
+-->
+  <!-- ======================================== Form Bean Definitions -->
+  <form-beans>
+    <!-- sample form bean descriptor for an ActionForm
+
+        <form-bean
+
+            name="inputForm"
+
+            type="app.InputForm"/>
+
+    end sample -->
+    <!-- sample form bean descriptor for a DynaActionForm
+
+        <form-bean
+
+            name="logonForm"
+
+            type="org.apache.struts.action.DynaActionForm">
+
+            <form-property
+
+                name="username"
+
+                type="java.lang.String"/>
+
+            <form-property
+
+                name="password"
+
+                type="java.lang.String"/>
+
+    end sample -->
+    <form-bean name="ClientesFtech" type="com.f16.ftech.struts.forms.ClientesFtechForm" />
+    <form-bean name="ClientesFtechFindByPrimaryKey" type="com.f16.ftech.struts.forms.ClientesFtechFindByPrimaryKeyForm" />
+    <form-bean name="ClientesFtechFindAll" type="com.f16.ftech.struts.forms.ClientesFtechFindAllForm" />
+    <form-bean name="ClientesFtechFindWhereIdClienteEquals" type="com.f16.ftech.struts.forms.ClientesFtechFindWhereIdClienteEqualsForm" />
+    <form-bean name="ClientesFtechFindWhereNumeroCcEquals" type="com.f16.ftech.struts.forms.ClientesFtechFindWhereNumeroCcEqualsForm" />
+    <form-bean name="ClientesFtechFindWhereNomeEquals" type="com.f16.ftech.struts.forms.ClientesFtechFindWhereNomeEqualsForm" />
+    <form-bean name="ClientesFtechFindWhereMoradaEquals" type="com.f16.ftech.struts.forms.ClientesFtechFindWhereMoradaEqualsForm" />
+    <form-bean name="ClientesFtechFindWhereDataNascimentoEquals" type="com.f16.ftech.struts.forms.ClientesFtechFindWhereDataNascimentoEqualsForm" />
+    <form-bean name="ClientesFtechFindWhereDataInsercaoEquals" type="com.f16.ftech.struts.forms.ClientesFtechFindWhereDataInsercaoEqualsForm" />
+    <form-bean name="ClientesFtechFindWhereGeneroEquals" type="com.f16.ftech.struts.forms.ClientesFtechFindWhereGeneroEqualsForm" />
+  </form-beans>
+  <!-- ================================= Global Exception Definitions -->
+  <global-exceptions>
+    <!-- sample exception handler
+
+        <exception
+
+            key="expired.password"
+
+            type="app.ExpiredPasswordException"
+
+            path="/changePassword.jsp"/>
+
+        end sample -->
+  </global-exceptions>
+  <!-- =================================== Global Forward Definitions -->
+  <global-forwards>
+    <!-- Default forward to "Welcome" action -->
+    <!-- Demonstrates using index.jsp to forward -->
+    <forward name="welcome" path="/Welcome.do" />
+  </global-forwards>
+  <!-- =================================== Action Mapping Definitions -->
+  <action-mappings>
+    <!-- Default "Welcome" action -->
+    <!-- Forwards to Welcome.jsp -->
+    <action path="/Welcome" type="org.apache.struts.actions.ForwardAction" parameter=".index" />
+    <!-- sample input and input submit actions
+
+
+
+        <action
+
+            path="/Input"
+
+            type="org.apache.struts.actions.ForwardAction"
+
+            parameter="/pages/Input.jsp"/>
+
+
+
+        <action
+
+            path="/InputSubmit"
+
+            type="app.InputAction"
+
+            name="inputForm"
+
+            scope="request"
+
+            validate="true"
+
+            input="/pages/Input.jsp"/>
+
+
+
+    end samples -->
+    <action path="/ClientesFtech" parameter=".clientesFtech.index" type="org.apache.struts.actions.ForwardAction" validate="false" />
+    <action path="/ClientesFtechInsert" name="ClientesFtech" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechInsertAction">
+      <forward name="success" path=".clientesFtech.edit" />
+    </action>
+    <action path="/ClientesFtechUpdate" name="ClientesFtech" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechUpdateAction">
+      <forward name="success" path=".clientesFtech.edit" />
+    </action>
+    <action path="/ClientesFtechDelete" name="ClientesFtech" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechDeleteAction">
+      <forward name="success" path=".clientesFtech.edit" />
+    </action>
+    <action path="/ClientesFtechSave" name="ClientesFtech" type="com.f16.ftech.struts.actions.ClientesFtechSaveAction" input=".clientesFtech.edit">
+      <forward name="success" path=".clientesFtech.index" />
+      <forward name="failure" path=".clientesFtech.edit" />
+    </action>
+    <action path="/ClientesFtechFindByPrimaryKey" forward=".clientesFtech.findByPrimaryKey.form" />
+    <action path="/ClientesFtechFindByPrimaryKeyResults" name="ClientesFtechFindByPrimaryKey" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindByPrimaryKeyAction">
+      <forward name="view" path=".clientesFtech.view" />
+      <forward name="update" path=".clientesFtech.edit" />
+      <forward name="failure" path=".clientesFtech.findByPrimaryKey.form" />
+    </action>
+    <action path="/ClientesFtechFindAll" forward=".clientesFtech.findAll.form" />
+    <action path="/ClientesFtechFindAllResults" name="ClientesFtechFindAll" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindAllAction">
+      <forward name="success" path=".clientesFtech.findAll.results" />
+      <forward name="failure" path=".clientesFtech.findAll.form" />
+    </action>
+    <action path="/ClientesFtechFindWhereIdClienteEquals" forward=".clientesFtech.findWhereIdClienteEquals.form" />
+    <action path="/ClientesFtechFindWhereIdClienteEqualsResults" name="ClientesFtechFindWhereIdClienteEquals" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindWhereIdClienteEqualsAction">
+      <forward name="success" path=".clientesFtech.findWhereIdClienteEquals.results" />
+      <forward name="failure" path=".clientesFtech.findWhereIdClienteEquals.form" />
+    </action>
+    <action path="/ClientesFtechFindWhereNumeroCcEquals" forward=".clientesFtech.findWhereNumeroCcEquals.form" />
+    <action path="/ClientesFtechFindWhereNumeroCcEqualsResults" name="ClientesFtechFindWhereNumeroCcEquals" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindWhereNumeroCcEqualsAction">
+      <forward name="success" path=".clientesFtech.findWhereNumeroCcEquals.results" />
+      <forward name="failure" path=".clientesFtech.findWhereNumeroCcEquals.form" />
+    </action>
+    <action path="/ClientesFtechFindWhereNomeEquals" forward=".clientesFtech.findWhereNomeEquals.form" />
+    <action path="/ClientesFtechFindWhereNomeEqualsResults" name="ClientesFtechFindWhereNomeEquals" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindWhereNomeEqualsAction">
+      <forward name="success" path=".clientesFtech.findWhereNomeEquals.results" />
+      <forward name="failure" path=".clientesFtech.findWhereNomeEquals.form" />
+    </action>
+    <action path="/ClientesFtechFindWhereMoradaEquals" forward=".clientesFtech.findWhereMoradaEquals.form" />
+    <action path="/ClientesFtechFindWhereMoradaEqualsResults" name="ClientesFtechFindWhereMoradaEquals" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindWhereMoradaEqualsAction">
+      <forward name="success" path=".clientesFtech.findWhereMoradaEquals.results" />
+      <forward name="failure" path=".clientesFtech.findWhereMoradaEquals.form" />
+    </action>
+    <action path="/ClientesFtechFindWhereDataNascimentoEquals" forward=".clientesFtech.findWhereDataNascimentoEquals.form" />
+    <action path="/ClientesFtechFindWhereDataNascimentoEqualsResults" name="ClientesFtechFindWhereDataNascimentoEquals" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindWhereDataNascimentoEqualsAction">
+      <forward name="success" path=".clientesFtech.findWhereDataNascimentoEquals.results" />
+      <forward name="failure" path=".clientesFtech.findWhereDataNascimentoEquals.form" />
+    </action>
+    <action path="/ClientesFtechFindWhereDataInsercaoEquals" forward=".clientesFtech.findWhereDataInsercaoEquals.form" />
+    <action path="/ClientesFtechFindWhereDataInsercaoEqualsResults" name="ClientesFtechFindWhereDataInsercaoEquals" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindWhereDataInsercaoEqualsAction">
+      <forward name="success" path=".clientesFtech.findWhereDataInsercaoEquals.results" />
+      <forward name="failure" path=".clientesFtech.findWhereDataInsercaoEquals.form" />
+    </action>
+    <action path="/ClientesFtechFindWhereGeneroEquals" forward=".clientesFtech.findWhereGeneroEquals.form" />
+    <action path="/ClientesFtechFindWhereGeneroEqualsResults" name="ClientesFtechFindWhereGeneroEquals" validate="false" type="com.f16.ftech.struts.actions.ClientesFtechFindWhereGeneroEqualsAction">
+      <forward name="success" path=".clientesFtech.findWhereGeneroEquals.results" />
+      <forward name="failure" path=".clientesFtech.findWhereGeneroEquals.form" />
+    </action>
+  </action-mappings>
+  <!-- ===================================== Controller Configuration -->
+  <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+  <!-- ================================ Message Resources Definitions -->
+  <message-resources parameter="resources.application" />
+  <!-- ======================================= Plug Ins Configuration -->
+  <!-- ========== Tiles plugin ===================  -->
+  <!--												-->
+  <!--
+     This plugin initialize Tiles definition factory. This later can takes some
+	 parameters explained here after. The plugin first read parameters from web.xml, then
+	 overload them with parameters defined here. All parameters are optional.
+	 The plugin should be declared in each struts-config file.
+       - definitions-config: (optional) 
+            Specify configuration file names. There can be several comma 
+		    separated file names (default: ?? )
+       - moduleAware: (optional - struts1.1) 
+            Specify if the Tiles definition factory is module aware. If true (default), 
+			there will be one factory for each Struts module. 
+			If false, there will be one common factory for all module. In this later case, 
+			it is still needed to declare one plugin per module. The factory will be 
+			initialized with parameters found in the first initialized plugin (generally the
+			one associated with the default module).
+			  true : One factory per module. (default)
+			  false : one single shared factory for all modules
+	   - definitions-parser-validate: (optional)
+	        Specify if xml parser should validate the Tiles configuration file.
+			  true : validate. DTD should be specified in file header. (default)
+			  false : no validation
+			  
+	  Paths found in Tiles definitions are relative to the main context.
+  -->
+  <!-- comment following if struts1.0.x -->
+  <plug-in className="org.apache.struts.tiles.TilesPlugin">
+    <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+    <set-property property="moduleAware" value="true" />
+    <set-property property="definitions-parser-validate" value="true" />
+  </plug-in>
+  <!-- end comment if struts1.0.x -->
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+  </plug-in>
+</struts-config>
+

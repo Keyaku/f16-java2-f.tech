@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="build">
+  <target name="build">
+    <property name="axis.home" value="path.to.axis" />
+    <path id="axis.classpath">
+      <fileset dir="${axis.home}/lib">
+        <include name="**/*.jar" />
+      </fileset>
+    </path>
+    <taskdef resource="axis-tasks.properties" classpathref="axis.classpath" />
+    <mkdir dir="src" />
+    <mkdir dir="classes" />
+    <axis-java2wsdl output="ClientesFtech.wsdl" className="com.f16.ftech.jdbc.ClientesFtechDaoImpl" namespace="urn:MyProject" location="http://localhost:8080/axis/services/ClientesFtech" methods="insert,update,delete,findByPrimaryKey,findAll,findWhereIdClienteEquals,findWhereNumeroCcEquals,findWhereNomeEquals,findWhereMoradaEquals,findWhereDataNascimentoEquals,findWhereDataInsercaoEquals,findWhereGeneroEquals">
+      <mapping namespace="urn:MyProject" package="com.f16.ftech.jdbc" />
+    </axis-java2wsdl>
+    <axis-wsdl2java url="ClientesFtech.wsdl" deployscope="session" serverSide="yes" noimports="no" verbose="no" testcase="no" output="src">
+      <mapping namespace="urn:MyProject" package="com.f16.ftech.jdbc" />
+    </axis-wsdl2java>
+    <javac srcdir="src" destdir="classes">
+      <classpath refid="axis.classpath" />
+    </javac>
+  </target>
+</project>
+

@@ -46,6 +46,6 @@ public class VerificaCliente {
 		
 		Date dataInsert = cliente.getDataInsercao();
 		Date dataNasc = cliente.getDataNascimento();
-		return dataInsert.compareTo(dataNasc) < 0;
+		return dataInsert.compareTo(dataNasc) > 0;
 	}
 }

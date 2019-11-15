@@ -238,7 +238,7 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 	 */
 	public ClientesFtech findByPrimaryKey(int idCliente) throws ClientesFtechDaoException
 	{
-		ClientesFtech ret[] = findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ?", new Object[] {  new Integer(idCliente) } );
+		ClientesFtech ret[] = findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ?", new Object[] {  Integer.valueOf(idCliente) } );
 		return ret.length==0 ? null : ret[0];
 	}
 
@@ -255,7 +255,7 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 	 */
 	public ClientesFtech[] findWhereIdClienteEquals(int idCliente) throws ClientesFtechDaoException
 	{
-		return findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ? ORDER BY ID_CLIENTE", new Object[] {  new Integer(idCliente) } );
+		return findByDynamicSelect( SQL_SELECT + " WHERE ID_CLIENTE = ? ORDER BY ID_CLIENTE", new Object[] {  Integer.valueOf(idCliente) } );
 	}
 
 	/** 
@@ -263,7 +263,7 @@ calls to this DAO, otherwise a new Connection will be allocated for each operati
 	 */
 	public ClientesFtech[] findWhereNumeroCcEquals(int numeroCc) throws ClientesFtechDaoException
 	{
-		return findByDynamicSelect( SQL_SELECT + " WHERE NUMERO_CC = ? ORDER BY NUMERO_CC", new Object[] {  new Integer(numeroCc) } );
+		return findByDynamicSelect( SQL_SELECT + " WHERE NUMERO_CC = ? ORDER BY NUMERO_CC", new Object[] {  Integer.valueOf(numeroCc) } );
 	}
 
 	/** 

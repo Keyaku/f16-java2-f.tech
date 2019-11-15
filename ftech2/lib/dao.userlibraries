@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="dao" systemlibrary="false">
+        <archive path="/ftech2/lib/dao/commons-beanutils.jar"/>
+        <archive path="/ftech2/lib/dao/commons-collections.jar"/>
+        <archive path="/ftech2/lib/dao/commons-digester.jar"/>
+        <archive path="/ftech2/lib/dao/commons-fileupload.jar"/>
+        <archive path="/ftech2/lib/dao/commons-lang.jar"/>
+        <archive path="/ftech2/lib/dao/commons-logging.jar"/>
+        <archive path="/ftech2/lib/dao/commons-validator.jar"/>
+        <archive path="/ftech2/lib/dao/jakarta-oro.jar"/>
+    </library>
+</eclipse-userlibraries>

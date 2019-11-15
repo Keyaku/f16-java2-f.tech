@@ -5,6 +5,7 @@ import javax.jws.WebService;
 
 import com.f16.ftech.dao.ClientesFtechDao;
 import com.f16.ftech.dto.ClientesFtech;
+import com.f16.ftech.dto.ClientesFtechPk;
 import com.f16.ftech.exceptions.ClientesFtechDaoException;
 import com.f16.ftech.factory.ClientesFtechDaoFactory;
 
@@ -31,5 +32,26 @@ public class Clientes {
 		e.printStackTrace();
 	}
 		return clientes;
+}
+
+@WebMethod
+public int DeleteCliente(ClientesFtechPk clientepk) {
+	ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+	try {
+		clienteDao.delete(clientepk);
+	}catch (ClientesFtechDaoException e) {
+		e.printStackTrace();
+	}
+	return 0;
+}
+
+public int UpdateCliente(ClientesFtechPk clientepk, ClientesFtech cliente) {
+	ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+	try {
+		clienteDao.update(clientepk,cliente);
+	}catch (ClientesFtechDaoException e) {
+		e.printStackTrace();
+	}
+	return 0;
 }
 }

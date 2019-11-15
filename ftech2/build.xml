@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE xml>
+<project default="build">
+  <target name="build">
+    <delete dir="classes" />
+    <mkdir dir="classes" />
+    <javac destdir="classes">
+      <src path="src" />
+      <classpath>
+        <pathelement location="C:\Program Files (x86)\FireStormDAO-4.0.1\jars\hibernate3.jar" />
+        <pathelement location="C:\Program Files (x86)\FireStormDAO-4.0.1\jars\j2ee.jar" />
+        <pathelement location="C:\Program Files (x86)\FireStormDAO-4.0.1\jars\log4j-1.2.8.jar" />
+      </classpath>
+    </javac>
+    <jar jarfile="ftech1.jar" baseDir="classes">
+      <metainf dir="conf" />
+    </jar>
+    <ear destfile="ftech1.ear" appxml="application.xml">
+      <fileset dir="." includes="ftech1*.jar,ftech1*.war" />
+    </ear>
+  </target>
+</project>

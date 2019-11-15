@@ -7,10 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
  
-/**
- * @author Crunchify.com
- */
- 
+
 	public class Jsp extends HttpServlet {
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        // reading the user input
@@ -29,7 +26,7 @@ import java.io.PrintWriter;
 	                    "<head> \n" +
 	                      "<meta http-equiv=\"Content-Type\" content=\"text/html; " +
 	                        "charset=ISO-8859-1\"> \n" +
-	                      "<title> Crunchify.com JSP Servlet Example  </title> \n" +
+	                      "<title> Java Avancado JSP Servlet Example  </title> \n" +
 	                    "</head> \n" +
 	                    "<body> <div align='center'> \n" +
 	                      "<style= \"font-size=\"12px\" color='black'\"" + "\">" +

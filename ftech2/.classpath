@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="lib" path="lib/servlet-3.0/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-3.0/javax.servlet.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jre7">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>

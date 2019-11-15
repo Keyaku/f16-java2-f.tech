@@ -16,15 +16,17 @@ public class Clientes {
 	@WebMethod
 	public int InsertCliente(ClientesFtech cliente) {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+		int valor_retorno = -1;
 		try {
 			if(VerificarCC(cliente)) {
 				clienteDao.insert(cliente);
+				valor_retorno = 1;
 			}
 			
 		}catch (ClientesFtechDaoException e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return valor_retorno;
 	}
 	
 	@WebMethod
@@ -54,12 +56,16 @@ public class Clientes {
 	@WebMethod
 	public int UpdateCliente(ClientesFtechPk clientepk, ClientesFtech cliente) {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+		int valor_retorno = -1;
 		try {
+			if(VerificarCC(cliente)) {
 			clienteDao.update(clientepk,cliente);
+			valor_retorno = 1;
+			}
 		}catch (ClientesFtechDaoException e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return valor_retorno;
 	}
 
 	@WebMethod

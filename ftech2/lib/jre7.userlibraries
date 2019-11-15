@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="jre7" systemlibrary="false">
+        <archive path="/ftech2/lib/jre7/lib/alt-rt.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/charsets.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/deploy.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/javaws.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/jce.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/jfr.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/jfxrt.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/jsse.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/management-agent.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/plugin.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/resources.jar"/>
+        <archive path="/ftech2/lib/jre7/lib/rt.jar"/>
+    </library>
+</eclipse-userlibraries>

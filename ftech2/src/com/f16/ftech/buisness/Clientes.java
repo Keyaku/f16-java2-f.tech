@@ -1,5 +1,6 @@
 package com.f16.ftech.buisness;
 
+
 import java.util.Date;
 
 import javax.jws.WebMethod;
@@ -18,7 +19,7 @@ public class Clientes {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
 		int valor_retorno = -1;
 		try {
-			if(VerificarCC(cliente)) {
+			if(VerificarCC(cliente) && VerificarGenero(cliente) && VerificarDataNasc(cliente) && VerificarDataInsert(cliente)) {
 				clienteDao.insert(cliente);
 				valor_retorno = 1;
 			}
@@ -58,7 +59,7 @@ public class Clientes {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
 		int valor_retorno = -1;
 		try {
-			if(VerificarCC(cliente)) {
+			if(VerificarCC(cliente) && VerificarGenero(cliente) && VerificarDataNasc(cliente) && VerificarDataInsert(cliente)) {
 			clienteDao.update(clientepk,cliente);
 			valor_retorno = 1;
 			}
@@ -168,4 +169,54 @@ public class Clientes {
 		
 		return false;
 	}
+	
+	public boolean VerificarGenero(ClientesFtech cliente) {
+		String genero = cliente.getGenero();
+		int length = String.valueOf(genero).length();
+		if(length == 1 && (genero.contains("M") || genero.contains("F"))) {
+			return true;
+		}
+		
+		return false;
+	}
+	// Tenho de pensar neste
+//	public boolean VerificarNome(ClientesFtech cliente) {
+//		String nome = cliente.getNome();
+//		
+//		if(true) {
+//			return true;
+//		}
+//		
+//		return false;
+//	}
+	
+	public boolean VerificarDataNasc(ClientesFtech cliente) {
+		
+		Date dataNasc = cliente.getDataNascimento();
+		Date date2 = new Date();
+		if(dataNasc.compareTo(date2) < 0) {
+			return true;
+		}		
+		return false;
+	}
+	
+	public boolean VerificarDataInsert(ClientesFtech cliente) {
+		
+		Date dataInsert = cliente.getDataInsercao();
+		Date date2 = new Date();
+		if(dataInsert.compareTo(date2) < 0) {
+			return true;
+		}		
+		return false;
+	}
+	
+//	public boolean VerificarDatas(ClientesFtech cliente) {
+//		
+//		Date dataInsert = cliente.getDataInsercao();
+//		Date dataNasc = cliente.getDataNascimento();
+//		if(dataInsert.compareTo(dataNasc) < 0) {
+//			return true;
+//		}		
+//		return false;
+//	}
 }

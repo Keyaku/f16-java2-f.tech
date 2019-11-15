@@ -11,6 +11,8 @@ import com.f16.ftech.dto.ClientesFtech;
 import com.f16.ftech.dto.ClientesFtechPk;
 import com.f16.ftech.exceptions.ClientesFtechDaoException;
 import com.f16.ftech.factory.ClientesFtechDaoFactory;
+import com.f16.ftech.buisness.VerificaCliente;
+
 
 @WebService
 public class Clientes {
@@ -19,7 +21,7 @@ public class Clientes {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
 		int valor_retorno = -1;
 		try {
-			if(VerificarCC(cliente) && VerificarGenero(cliente) && VerificarDataNasc(cliente) && VerificarDataInsert(cliente)) {
+			if (VerificaCliente.Tudo(cliente)) {
 				clienteDao.insert(cliente);
 				valor_retorno = 1;
 			}
@@ -59,7 +61,7 @@ public class Clientes {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
 		int valor_retorno = -1;
 		try {
-			if(VerificarCC(cliente) && VerificarGenero(cliente) && VerificarDataNasc(cliente) && VerificarDataInsert(cliente)) {
+			if (VerificaCliente.Tudo(cliente)) {
 			clienteDao.update(clientepk,cliente);
 			valor_retorno = 1;
 			}
@@ -159,64 +161,5 @@ public class Clientes {
 		}
 		return clientes;
 	}
-	
-	public boolean VerificarCC(ClientesFtech cliente) {
-		int num_cc = cliente.getNumeroCc();
-		int length = String.valueOf(num_cc).length();
-		if(length == 8) {
-			return true;
-		}
-		
-		return false;
-	}
-	
-	public boolean VerificarGenero(ClientesFtech cliente) {
-		String genero = cliente.getGenero();
-		int length = String.valueOf(genero).length();
-		if(length == 1 && (genero.contains("M") || genero.contains("F"))) {
-			return true;
-		}
-		
-		return false;
-	}
-	// Tenho de pensar neste
-//	public boolean VerificarNome(ClientesFtech cliente) {
-//		String nome = cliente.getNome();
-//		
-//		if(true) {
-//			return true;
-//		}
-//		
-//		return false;
-//	}
-	
-	public boolean VerificarDataNasc(ClientesFtech cliente) {
-		
-		Date dataNasc = cliente.getDataNascimento();
-		Date date2 = new Date();
-		if(dataNasc.compareTo(date2) < 0) {
-			return true;
-		}		
-		return false;
-	}
-	
-	public boolean VerificarDataInsert(ClientesFtech cliente) {
-		
-		Date dataInsert = cliente.getDataInsercao();
-		Date date2 = new Date();
-		if(dataInsert.compareTo(date2) < 0) {
-			return true;
-		}		
-		return false;
-	}
-	
-//	public boolean VerificarDatas(ClientesFtech cliente) {
-//		
-//		Date dataInsert = cliente.getDataInsercao();
-//		Date dataNasc = cliente.getDataNascimento();
-//		if(dataInsert.compareTo(dataNasc) < 0) {
-//			return true;
-//		}		
-//		return false;
-//	}
+
 }

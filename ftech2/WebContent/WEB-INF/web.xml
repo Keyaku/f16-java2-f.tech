@@ -4,7 +4,7 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-	<display-name>Java Avançado JSP Servlet Example</display-name>
+	<display-name>Java Avancado JSP Servlet Example</display-name>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
@@ -14,11 +14,11 @@
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>Hello</servlet-name>
-        <servlet-class>com.ftech.jsp.servlet.Hello</servlet-class>
+        <servlet-name>Jsp</servlet-name>
+        <servlet-class>com.f16.ftech.servlet.Jsp</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Hello</servlet-name>
+        <servlet-name>Jsp</servlet-name>
         <url-pattern>/ftech</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -17,7 +17,10 @@ public class Clientes {
 	public int InsertCliente(ClientesFtech cliente) {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
 		try {
-			clienteDao.insert(cliente);
+			if(VerificarCC(cliente)) {
+				clienteDao.insert(cliente);
+			}
+			
 		}catch (ClientesFtechDaoException e) {
 			e.printStackTrace();
 		}
@@ -148,5 +151,15 @@ public class Clientes {
 			e.printStackTrace();
 		}
 		return clientes;
+	}
+	
+	public boolean VerificarCC(ClientesFtech cliente) {
+		int num_cc = cliente.getNumeroCc();
+		int length = String.valueOf(num_cc).length();
+		if(length == 8) {
+			return true;
+		}
+		
+		return false;
 	}
 }

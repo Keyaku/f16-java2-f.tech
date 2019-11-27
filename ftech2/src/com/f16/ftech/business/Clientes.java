@@ -11,7 +11,6 @@ import com.f16.ftech.dto.ClientesFtech;
 import com.f16.ftech.dto.ClientesFtechPk;
 import com.f16.ftech.exceptions.ClientesFtechDaoException;
 import com.f16.ftech.factory.ClientesFtechDaoFactory;
-import com.f16.ftech.business.VerificaCliente;
 
 
 @WebService

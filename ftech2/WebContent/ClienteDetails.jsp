@@ -12,13 +12,13 @@ body {
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Detalhes do Cliente</title>
 	
-	<% int clienteID = (int)request.getAttribute("clienteID"); %>
+	<% int clienteID = Integer.parseInt(request.getAttribute("clienteID").toString()); %>
 </head>
 <body>
 
 <section style="text-align: center" style="margin-top: 50px;">
 	<h3>Detalhes do Cliente</h3>
-	<% if (clienteID != 0) { %>
+	<% if (clienteID != 0) { Clientes cliente = new Clientes(); %>
 		<table>
 			<thead>
 				<tr>

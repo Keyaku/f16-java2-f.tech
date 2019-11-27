@@ -48,9 +48,9 @@ import java.util.Date;
 	        cliente.setNome(name);
 	      
 	        Clientes novoCliente = new Clientes();
-	        int pk = novoCliente.InsertCliente(cliente);
+	        novoCliente.InsertCliente(cliente);
 	        
-	        request.setAttribute("clienteID", pk);
+	        request.setAttribute("clienteID", ID);
 	        request.getRequestDispatcher("/ClienteDetails.jsp").forward(request, response);	        
 	    }
 	}

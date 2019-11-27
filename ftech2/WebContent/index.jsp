@@ -16,8 +16,8 @@ body {
 <body>
 
 <div align="center" style="margin-top: 50px;">
-
-    <form action="InsertServlet" method = "POST">
+					
+    <form action="InsertServlet" method="post">
         Please enter the ID:  <input type="text" name="ID" size="20px"> <br>
         Please enter CC number:  <input type="text" name="CCnumber" size="20px"> <br><br>
         Please enter your name:  <input type="text" name="name" size="20px"> <br><br>
@@ -25,7 +25,7 @@ body {
         Please enter your date of birth:  <input type="text" name="birthdate" size="20px"> <br><br>
         Please enter today's date:  <input type="text" name="dateInsert" size="20px"> <br><br>
         Please enter your gender:  <input type="text" name="genero" size="20px"> <br><br>
-    <input type="submit" value="submit">
+    <input type="submit" value="Inserir na Lista">
     </form>
 
 </div>

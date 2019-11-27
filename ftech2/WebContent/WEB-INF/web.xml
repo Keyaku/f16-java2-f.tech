@@ -19,6 +19,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>InsertServlet</servlet-name>
-        <url-pattern>/ftech</url-pattern>
+        <url-pattern>/InsertServlet</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -1,7 +1,9 @@
 package com.f16.ftech.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,12 +16,13 @@ import com.f16.ftech.dto.ClientesFtech;
 import java.text.SimpleDateFormat;
 import java.util.Date;
  
-// Esta doGet em vez de doPost ERRADO
+
+@WebServlet("InsertServlet")
 	public class InsertServlet extends HttpServlet {
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        // reading the user input
 	        String ID = request.getParameter("ID");
-	        String CC_number = request.getParameter("CC_number");
+	        String CCnumber = request.getParameter("CCnumber");
 	        String name = request.getParameter("name");
 	        String morada = request.getParameter("morada");
 	        String birthdate = request.getParameter("birthdate");
@@ -43,12 +46,13 @@ import java.util.Date;
 	        cliente.setGenero(genero);
 	        cliente.setIdCliente(Integer.parseInt(ID));
 	        cliente.setMorada(morada);
-	        cliente.setNumeroCc(Integer.parseInt(CC_number));
+	        cliente.setNumeroCc(Integer.parseInt(CCnumber));
 	        cliente.setNome(name);
-	        response.getWriter();
+	      
 	        Clientes novoCliente = new Clientes();
 	        novoCliente.InsertCliente(cliente);
-	        }
+
+	    }
 	}
 
 

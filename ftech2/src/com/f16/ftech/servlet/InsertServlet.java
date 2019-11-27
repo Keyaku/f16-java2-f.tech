@@ -14,9 +14,9 @@ import com.f16.ftech.dto.ClientesFtech;
 import java.text.SimpleDateFormat;
 import java.util.Date;
  
-
+// Esta doGet em vez de doPost ERRADO
 	public class InsertServlet extends HttpServlet {
-	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        // reading the user input
 	        String ID = request.getParameter("ID");
 	        String CC_number = request.getParameter("CC_number");

@@ -34,23 +34,23 @@ body {
 			<tbody>
 			<tr id="CC">
 				<td>CC</td>
-				<td>${cliente.getNumeroCc()}</td>
+				<td><%= cliente.getNumeroCc() %></td>
 			</tr>
 			<tr id="Nome">
 				<td>Nome</td>
-				<td>${cliente.getNome()}</td>
+				<td><%= cliente.getNome() %></td>
 			</tr>
 			<tr id="Morada">
 				<td>Morada</td>
-				<td>${cliente.getMorada()}</td>
+				<td><%= cliente.getMorada() %></td>
 			</tr>
 			<tr id="Genero">
 				<td>Genero</td>
-				<td>${cliente.getGenero()}</td>
+				<td><%= cliente.getGenero() %></td>
 			</tr>
 			<tr id="Data Nascimento">
 				<td>Data Nascimento</td>
-				<td>${cliente.getDataNasc()}</td>
+				<td><%= cliente.getDataNascimento() %></td>
 			</tr>
 			</tbody>
 		</table>

@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.f16.ftech.business.Clientes;
 import com.f16.ftech.dto.ClientesFtech;
 
-
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
  
@@ -50,8 +48,10 @@ import java.util.Date;
 	        cliente.setNome(name);
 	      
 	        Clientes novoCliente = new Clientes();
-	        novoCliente.InsertCliente(cliente);
-
+	        int pk = novoCliente.InsertCliente(cliente);
+	        
+	        request.setAttribute("clienteID", pk);
+	        request.getRequestDispatcher("/ClienteDetails.jsp").forward(request, response);	        
 	    }
 	}
 

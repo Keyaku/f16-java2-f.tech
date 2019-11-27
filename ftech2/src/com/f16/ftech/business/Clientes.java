@@ -18,17 +18,17 @@ public class Clientes {
 	@WebMethod
 	public int InsertCliente(ClientesFtech cliente) {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
-		int valor_retorno = -1;
+		int ret = 0;
 		try {
 			if (VerificaCliente.Tudo(cliente)) {
 				clienteDao.insert(cliente);
-				valor_retorno = 1;
+				ret = cliente.getIdCliente();
 			}
 			
 		}catch (ClientesFtechDaoException e) {
 			e.printStackTrace();
 		}
-		return valor_retorno;
+		return ret;
 	}
 	
 	@WebMethod

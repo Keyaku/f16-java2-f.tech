@@ -14,11 +14,11 @@
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>Jsp</servlet-name>
-        <servlet-class>com.f16.ftech.servlet.Jsp</servlet-class>
+        <servlet-name>InsertServlet</servlet-name>
+        <servlet-class>com.f16.ftech.servlet.InsertServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Jsp</servlet-name>
+        <servlet-name>InsertServlet</servlet-name>
         <url-pattern>/ftech</url-pattern>
     </servlet-mapping>
 </web-app>

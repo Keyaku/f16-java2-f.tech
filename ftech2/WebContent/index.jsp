@@ -11,13 +11,13 @@ body {
  
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Java AvanÃ§ado JSP Servlet Example</title>
+    <title>Java Avançado JSP Servlet Example</title>
 </head>
 <body>
 
 <div align="center" style="margin-top: 50px;">
 
-    <form action="JavaServlet">
+    <form action="InsertServlet">
         Please enter the ID:  <input type="text" name="ID" size="20px"> <br>
         Please enter CC number:  <input type="text" name="CCnumber" size="20px"> <br><br>
         Please enter your name:  <input type="text" name="name" size="20px"> <br><br>

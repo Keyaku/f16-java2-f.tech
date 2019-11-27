@@ -13,7 +13,7 @@ import com.f16.ftech.exceptions.ClientesFtechDaoException;
 import com.f16.ftech.factory.ClientesFtechDaoFactory;
 import com.f16.ftech.buisness.VerificaCliente;
 
-
+//Ficheiro com os webservices
 @WebService
 public class Clientes {
 	@WebMethod

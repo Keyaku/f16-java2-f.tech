@@ -1,4 +1,4 @@
-package com.f16.ftech.buisness;
+package com.f16.ftech.business;
 
 
 import java.util.Date;
@@ -11,7 +11,6 @@ import com.f16.ftech.dto.ClientesFtech;
 import com.f16.ftech.dto.ClientesFtechPk;
 import com.f16.ftech.exceptions.ClientesFtechDaoException;
 import com.f16.ftech.factory.ClientesFtechDaoFactory;
-import com.f16.ftech.buisness.VerificaCliente;
 
 //Ficheiro com os webservices
 @WebService

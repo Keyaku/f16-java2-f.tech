@@ -1,4 +1,4 @@
-package com.f16.ftech.buisness;
+package com.f16.ftech.business;
 
 import java.util.Date;
 

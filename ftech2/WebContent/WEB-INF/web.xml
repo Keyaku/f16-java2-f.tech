@@ -29,12 +29,4 @@
         <servlet-name>ShowServlet</servlet-name>
         <url-pattern>/ShowServlet</url-pattern>
     </servlet-mapping>
-        <servlet>
-        <servlet-name>DeleteServlet</servlet-name>
-        <servlet-class>com.f16.ftech.servlet.DeleteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DeleteServlet</servlet-name>
-        <url-pattern>/DeleteServlet</url-pattern>
-    </servlet-mapping>
 </web-app>

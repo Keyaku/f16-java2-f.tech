@@ -7,6 +7,12 @@ body {
     background-image:
         url('https://cdn.crunchify.com/wp-content/uploads/2013/03/Crunchify.bg_.300.png');
 }
+input {
+	size: 20px;
+}
+input.genero:first {
+	margin-right: 10px;
+}
 </style>
  
 <head>
@@ -17,26 +23,29 @@ body {
 
 <div align="center" style="margin-top: 50px;">
 					
-    <form action="InsertServlet" method="post">
-        Please enter the ID:  <input type="text" name="ID" size="20px"> <br>
-        Please enter CC number:  <input type="text" name="CCnumber" size="20px"> <br><br>
-        Please enter your name:  <input type="text" name="name" size="20px"> <br><br>
-        Please enter the address:  <input type="text" name="morada" size="20px"> <br><br>
-        Please enter your date of birth:  <input type="text" name="birthdate" size="20px"> <br><br>
-        Please enter today's date:  <input type="text" name="dateInsert" size="20px"> <br><br>
-        Please enter your gender:  <input type="text" name="genero" size="20px"> <br><br>
-    <input type="submit" value="Submeter">
+    <form id="addOrUpdate" action="InsertServlet" method="post">
+		Please enter the ID:  <input type="text" name="ID" required> <br>
+		Please enter CC number:  <input type="text" name="CCnumber" required> <br><br>
+		Please enter your name:  <input type="text" name="name"> <br><br>
+		Please enter the address:  <input type="text" name="morada"> <br><br>
+		Please enter your date of birth:  <input type="text" name="birthdate"> <br><br>
+		Please enter today's date:  <input type="text" name="dateInsert"> <br><br>
+		Please enter your gender:
+        <input type="radio" class="genero" name="genero" value="M">Male
+		<input type="radio" class="genero" name="genero" value="F">Female<br><br>
+    <input type="submit" name="add" value="Adicionar">
+    <input type="submit" name="update" value="Atualizar">
+    <input type="submit" name="delete" value="Apagar">
     </form>
     
     <form action="ShowServlet" method="post">
 	<input type="submit" value="Listagem de Clientes">
     </form>
-    
-    <form action="DeleteServlet" method="post">
-    Please enter the ID to be deleted:  <input type="text" name="ID" size="20px"> <br>
-	<input type="submit" value="Apagar um Cliente">
-    </form>
 </div>
- 
+
+<script type="text/javascript" src="scripts/default.js"></script>
+<script type="text/javascript">
+	
+</script>
 </body>
 </html>

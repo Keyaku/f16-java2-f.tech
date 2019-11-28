@@ -1,0 +1,1 @@
+var gebi = function(id) => document.getElementById(id);

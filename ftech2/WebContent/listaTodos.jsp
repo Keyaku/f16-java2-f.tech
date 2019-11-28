@@ -43,8 +43,6 @@
 				<td>Data Nascimento</td>
 				<td><%= cliente[i].getDataNascimento() %></td>
 			</tr>
-			
-			</tbody>
 		</table>
 	<% } %>
 	</section>

@@ -1,0 +1,13 @@
+body {
+	background-image:
+		url('https://cdn.crunchify.com/wp-content/uploads/2013/03/Crunchify.bg_.300.png');
+}
+
+table {
+	margin: 10px;
+    padding: 10px;
+    border: black;
+    border-style: dashed;
+    text-align: left;
+    float: left;
+}

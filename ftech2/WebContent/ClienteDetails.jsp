@@ -17,7 +17,8 @@ body {
 	<%
 	int clienteID = Integer.parseInt(request.getAttribute("clienteID").toString());
 	Clientes clientes = new Clientes();
-	ClientesFtech cliente = clientes.ListarClientesPorID(clienteID)[0];
+	ClientesFtech cliente = new ClientesFtech();	
+	cliente = clientes.ListarClientesPorID(clienteID)[0];
 	%>
 </head>
 <body>

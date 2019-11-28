@@ -25,9 +25,17 @@ body {
         Please enter your date of birth:  <input type="text" name="birthdate" size="20px"> <br><br>
         Please enter today's date:  <input type="text" name="dateInsert" size="20px"> <br><br>
         Please enter your gender:  <input type="text" name="genero" size="20px"> <br><br>
-    <input type="submit" value="Inserir na Lista">
+    <input type="submit" value="Submeter">
     </form>
-
+    
+    <form action="ShowServlet" method="post">
+	<input type="submit" value="Listagem de Clientes">
+    </form>
+    
+    <form action="DeleteServlet" method="post">
+    Please enter the ID to be deleted:  <input type="text" name="ID" size="20px"> <br>
+	<input type="submit" value="Apagar um Cliente">
+    </form>
 </div>
  
 </body>

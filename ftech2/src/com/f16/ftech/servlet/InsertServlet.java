@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.f16.ftech.business.Clientes;
+import com.f16.ftech.dao.ClientesFtechDao;
 import com.f16.ftech.dto.ClientesFtech;
+import com.f16.ftech.exceptions.ClientesFtechDaoException;
+import com.f16.ftech.factory.ClientesFtechDaoFactory;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,6 +32,7 @@ import java.util.Date;
 	        
 	        
 	        //criar objeto
+	        int clienteID = Integer.parseInt(ID);
 	        ClientesFtech cliente = new ClientesFtech();
 	        Date dataInsercao = null;
 	        Date dataNasc = null;
@@ -42,13 +46,24 @@ import java.util.Date;
 	        cliente.setDataInsercao(dataInsercao);
 	        cliente.setDataNascimento(dataNasc);
 	        cliente.setGenero(genero);
-	        cliente.setIdCliente(Integer.parseInt(ID));
+	        cliente.setIdCliente(clienteID);
 	        cliente.setMorada(morada);
 	        cliente.setNumeroCc(Integer.parseInt(CCnumber));
 	        cliente.setNome(name);
 	      
-	        Clientes novoCliente = new Clientes();
-	        novoCliente.InsertCliente(cliente);
+	        Clientes clienteNG = new Clientes();
+	    	ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+	    	try {
+				if (clienteDao.findByPrimaryKey(clienteID) != null) {
+					// do update
+					clienteNG.UpdateCliente(clienteID, cliente);
+				} else {
+					clienteNG.InsertCliente(cliente);
+				}
+			} catch (ClientesFtechDaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	        
 	        request.setAttribute("clienteID", ID);
 	        request.getRequestDispatcher("/ClienteDetails.jsp").forward(request, response);	        

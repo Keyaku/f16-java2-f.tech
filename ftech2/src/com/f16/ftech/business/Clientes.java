@@ -45,29 +45,51 @@ public class Clientes {
 	}
 
 	@WebMethod
-	public int DeleteCliente(ClientesFtechPk clientepk) {
+	public void DeleteCliente(ClientesFtechPk clientepk) {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
 		try {
 			clienteDao.delete(clientepk);
 		}catch (ClientesFtechDaoException e) {
 			e.printStackTrace();
 		}
-		return 0;
+	}
+	
+	@WebMethod
+	public void DeleteCliente(int clienteID) {
+		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+		ClientesFtechPk pk = new ClientesFtechPk();
+		try {
+			pk.setIdCliente(clienteID);
+			clienteDao.delete(pk);
+		}catch (ClientesFtechDaoException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@WebMethod
-	public int UpdateCliente(ClientesFtechPk clientepk, ClientesFtech cliente) {
+	public void UpdateCliente(ClientesFtechPk clientepk, ClientesFtech cliente) {
 		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
-		int valor_retorno = -1;
 		try {
 			if (VerificaCliente.Tudo(cliente)) {
 			clienteDao.update(clientepk,cliente);
-			valor_retorno = 1;
 			}
 		}catch (ClientesFtechDaoException e) {
 			e.printStackTrace();
 		}
-		return valor_retorno;
+	}
+	
+	@WebMethod
+	public void UpdateCliente(int clienteID, ClientesFtech cliente) {
+		ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+		ClientesFtechPk pk = new ClientesFtechPk();
+		try {
+			if (VerificaCliente.Tudo(cliente)) {
+				pk.setIdCliente(clienteID);
+				clienteDao.update(pk,cliente);
+			}
+		}catch (ClientesFtechDaoException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@WebMethod

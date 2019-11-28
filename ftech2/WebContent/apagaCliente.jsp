@@ -7,19 +7,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lista Global de Clientes</title>
+<title>Apagar Cliente</title>
 <link rel="stylesheet" type="text/css" href="css/default.css">
 
-	<% ClientesFtech[] cliente = null;
-	ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
-	cliente = clienteDao.findAll(); %>
+	<%int clienteID = Integer.parseInt(request.getAttribute("clienteID").toString());
+	Clientes clientes = new Clientes();
+	clientes.DeleteCliente(clienteID);
+	%>
+	
+	
+	<% ClientesFtechDao clienteDao = ClientesFtechDaoFactory.create();
+	ClientesFtech[] cliente = clienteDao.findAll(); %>
 </head>
 <body>
 <section style="text-align: center" style="margin-top: 50px;">
 	<h3>Lista de Clientes</h3>
+	O cliente apagado tem o ID igual a ${clienteID}
 		<% for(int i = 0; i<cliente.length ;i++){ %>
 		<table>
-			<tr id="ID">
+			<tr id = "ID">
 				<td>ID</td>
 				<td><%= cliente[i].getIdCliente() %></td>
 				</tr>
